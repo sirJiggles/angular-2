@@ -1,9 +1,6 @@
 import {Component} from 'angular2/core';
-
-interface Hero {
-	id: number;
-	name: string;
-}
+import {Hero} from '../../interfaces/hero/hero';
+import {HeroDetailsComponent} from '../hero-details/index';
 
 const HEROES: Hero[] = [
   { id: 11, name: "Gareth" },
@@ -20,6 +17,7 @@ const HEROES: Hero[] = [
 
 @Component({
 	selector: 'app',
+	directives: [HeroDetailsComponent],
 	styles:
 		[
 			`
@@ -73,14 +71,7 @@ const HEROES: Hero[] = [
 		],
 	template:
 		`
-		<div *ngIf="selectedHero">
-			<h2>{{selectedHero.name}} details!</h2>
-			<div><label>id: </label>{{selectedHero.id}}</div>
-			<div>
-			    <label>name: </label>
-			    <input [(ngModel)]="selectedHero.name" placeholder="name"/>
-			</div>
-		</div>
+		<hero-details [hero]="selectedHero"></hero-details>
 		<h2>All Heroes</h2>
 		<ul class="heroes">
 			<li
