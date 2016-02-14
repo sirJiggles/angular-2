@@ -1,8 +1,23 @@
 import {Component} from 'angular2/core';
 
+interface Hero {
+	id: number;
+	name: string;
+}
+
 @Component({
-	selector: 'my-app',
-	template: '<h1>My First Angular 2 App</h1>'
+	selector: 'app',
+	template: `
+		<h2>{{hero.name}} details!</h2>
+		<div><label>id: </label>{{hero.id}}</div>
+		<div><input [(ngModel)]="hero.name" placeholder="name" /></div>
+	`
 })
 
-export class AppComponent { }
+export class AppComponent {
+	public title = 'Tour of heroes';
+	public hero: Hero = {
+		id: 1,
+		name: 'Wilson'
+	}
+}
