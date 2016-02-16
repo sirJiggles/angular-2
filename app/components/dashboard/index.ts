@@ -18,11 +18,11 @@ export class DashboardComponent {
 
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this._heroesService.getHeroes().then( heroes => this.heroes = heroes.slice(1,5) );
   }
 
-  goToDetails(hero: Hero) {
+  goToDetails(hero: Hero): void {
     let link = ['HeroDetails', { id: hero.id }];
     this._router.navigate(link);
   }

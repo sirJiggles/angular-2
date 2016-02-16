@@ -18,13 +18,13 @@ export class HeroDetailsComponent {
     private _routeParams: RouteParams) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     // convert the route param to a number using + in JS
     let id = +this._routeParams.get('id');
     this._heroesService.getHero(id).then(hero => this.hero = hero);
   }
 
-  goBack() {
+  goBack(): void {
     window.history.back();
   }
 }

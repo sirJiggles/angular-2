@@ -4,7 +4,7 @@ System.register([], function(exports_1) {
         setters:[],
         execute: function() {
             exports_1("HEROES", HEROES = [
-                { id: 11, name: "Gareth" },
+                { id: 11, name: "Gareth", age: 31 },
                 { "id": 12, "name": "Narco" },
                 { "id": 13, "name": "Bombasto" },
                 { "id": 14, "name": "Celeritas" },
