@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../heroes/index', '../dashboard/index', '../../services/heroes/index'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', '../heroes/index', '../dashboard/index', '../hero-details/index', '../../services/heroes/index'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', '../heroes/index', '../dash
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, index_1, index_2, index_3;
+    var core_1, router_1, index_1, index_2, index_3, index_4;
     var AppComponent;
     return {
         setters:[
@@ -26,6 +26,9 @@ System.register(['angular2/core', 'angular2/router', '../heroes/index', '../dash
             },
             function (index_3_1) {
                 index_3 = index_3_1;
+            },
+            function (index_4_1) {
+                index_4 = index_4_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -39,9 +42,10 @@ System.register(['angular2/core', 'angular2/router', '../heroes/index', '../dash
                             router_1.ROUTER_DIRECTIVES
                         ],
                         providers: [
-                            index_3.HeroesService,
+                            index_4.HeroesService,
                             router_1.ROUTER_PROVIDERS
                         ],
+                        styleUrls: ['app/components/app/styles'],
                         template: "\n\t\t<h1>{{title}}</h1>\n\t\t<nav>\n\t\t\t<a [routerLink]=\"['Heroes']\">Heroes</a>\n\t\t\t<a [routerLink]=\"['Dashboard']\">Dashboard</a>\n\t\t</nav>\n\t\t<router-outlet></router-outlet>\n\t"
                     }),
                     router_1.RouteConfig([
@@ -55,6 +59,11 @@ System.register(['angular2/core', 'angular2/router', '../heroes/index', '../dash
                             name: 'Dashboard',
                             useAsDefault: true,
                             component: index_2.DashboardComponent
+                        },
+                        {
+                            path: '/detail/:id',
+                            name: 'HeroDetails',
+                            component: index_3.HeroDetailsComponent
                         }
                     ]), 
                     __metadata('design:paramtypes', [])

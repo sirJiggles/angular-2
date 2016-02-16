@@ -2,6 +2,7 @@ import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import {HeroesComponent} from '../heroes/index';
 import {DashboardComponent} from '../dashboard/index';
+import {HeroDetailsComponent} from '../hero-details/index';
 import {HeroesService} from '../../services/heroes/index';
 
 @Component({
@@ -13,6 +14,7 @@ import {HeroesService} from '../../services/heroes/index';
 		HeroesService,
 		ROUTER_PROVIDERS
 	],
+	styleUrls: ['app/components/app/styles'],
 	template: `
 		<h1>{{title}}</h1>
 		<nav>
@@ -34,6 +36,11 @@ import {HeroesService} from '../../services/heroes/index';
 		name: 'Dashboard',
 		useAsDefault: true,
 		component: DashboardComponent
+	},
+	{
+		path: '/detail/:id',
+		name: 'HeroDetails',
+		component: HeroDetailsComponent
 	}
 ])
 
