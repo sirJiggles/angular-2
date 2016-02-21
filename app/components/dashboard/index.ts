@@ -2,9 +2,11 @@ import {Component, OnInit} from 'angular2/core';
 import {Router} from 'angular2/router';
 import {Hero} from '../../interfaces/hero/index';
 import {HeroesService} from '../../services/heroes/index';
+import {Jigglyfy} from '../../pipes/jigglyfy/index';
 
 @Component({
   selector: 'dashboard',
+  pipes: [Jigglyfy],
   styleUrls: ['app/components/dashboard/styles.css'],
   templateUrl: 'app/components/dashboard/template.html'
 })
