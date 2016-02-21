@@ -26,12 +26,17 @@ System.register(['angular2/core', 'angular2/router', '../../services/heroes/inde
                 function HeroDetailsComponent(_heroesService, _routeParams) {
                     this._heroesService = _heroesService;
                     this._routeParams = _routeParams;
+                    this.powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
+                    this.submited = false;
                 }
                 HeroDetailsComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     // convert the route param to a number using + in JS
                     var id = +this._routeParams.get('id');
                     this._heroesService.getHero(id).then(function (hero) { return _this.hero = hero; });
+                };
+                HeroDetailsComponent.prototype.onSubmit = function () {
+                    this.submited = true;
                 };
                 HeroDetailsComponent.prototype.goBack = function () {
                     window.history.back();
@@ -40,8 +45,8 @@ System.register(['angular2/core', 'angular2/router', '../../services/heroes/inde
                     core_1.Component({
                         selector: 'hero-details',
                         inputs: ['hero'],
-                        styleUrls: ['app/components/hero-details/styles.css'],
-                        templateUrl: 'app/components/hero-details/template.html'
+                        templateUrl: 'app/components/hero-details/template.html',
+                        styleUrls: ['app/components/hero-details/style.css']
                     }), 
                     __metadata('design:paramtypes', [index_1.HeroesService, router_1.RouteParams])
                 ], HeroDetailsComponent);

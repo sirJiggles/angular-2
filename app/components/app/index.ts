@@ -15,14 +15,7 @@ import {HeroesService} from '../../services/heroes/index';
 		ROUTER_PROVIDERS
 	],
 	styleUrls: ['app/components/app/styles'],
-	template: `
-		<h1>{{title}}</h1>
-		<nav>
-			<a [routerLink]="['Heroes']">Heroes</a>
-			<a [routerLink]="['Dashboard']">Dashboard</a>
-		</nav>
-		<router-outlet></router-outlet>
-	`
+	templateUrl: 'app/components/app/template.html'
 })
 
 @RouteConfig([

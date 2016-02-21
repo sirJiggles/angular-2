@@ -1,7 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 import {Hero} from '../../interfaces/hero/index';
 import {Router} from 'angular2/router';
-import {HeroesService} from '../../services/heroes/';
+import {HeroesService} from '../../services/heroes/index';
 
 @Component({
 	selector: 'heroes',

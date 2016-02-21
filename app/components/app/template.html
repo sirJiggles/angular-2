@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>{{title}}</h1>
+
+  <ul class="nav nav-tabs">
+    <li role="presentation">
+      <a [routerLink]="['Heroes']" class="active">Heroes</a>
+    </li>
+    <li role="presentation">
+      <a [routerLink]="['Dashboard']">Dashboard</a>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>

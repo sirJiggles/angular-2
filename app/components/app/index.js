@@ -46,7 +46,7 @@ System.register(['angular2/core', 'angular2/router', '../heroes/index', '../dash
                             router_1.ROUTER_PROVIDERS
                         ],
                         styleUrls: ['app/components/app/styles'],
-                        template: "\n\t\t<h1>{{title}}</h1>\n\t\t<nav>\n\t\t\t<a [routerLink]=\"['Heroes']\">Heroes</a>\n\t\t\t<a [routerLink]=\"['Dashboard']\">Dashboard</a>\n\t\t</nav>\n\t\t<router-outlet></router-outlet>\n\t"
+                        templateUrl: 'app/components/app/template.html'
                     }),
                     router_1.RouteConfig([
                         {

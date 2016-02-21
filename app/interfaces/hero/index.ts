@@ -1,6 +1,7 @@
 export interface Hero {
 	id: number;
 	name: string;
-	// optional param
+	alterEgo?: string;
+	power: string;
 	age?: number;
 }
