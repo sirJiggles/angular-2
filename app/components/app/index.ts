@@ -4,6 +4,7 @@ import {HeroesComponent} from '../heroes/index';
 import {DashboardComponent} from '../dashboard/index';
 import {HeroDetailsComponent} from '../hero-details/index';
 import {HeroesService} from '../../services/heroes/index';
+import {Logger} from '../../services/logger/index';
 
 @Component({
 	selector: 'app',
@@ -12,6 +13,7 @@ import {HeroesService} from '../../services/heroes/index';
 	],
 	providers: [
 		HeroesService,
+		Logger,
 		ROUTER_PROVIDERS
 	],
 	styleUrls: ['app/components/app/styles'],

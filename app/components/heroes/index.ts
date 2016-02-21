@@ -1,10 +1,12 @@
 import {Component, OnInit} from 'angular2/core';
 import {Hero} from '../../interfaces/hero/index';
 import {Router} from 'angular2/router';
+import {HeroDetailsComponent} from '../hero-details/index';
 import {HeroesService} from '../../services/heroes/index';
 
 @Component({
 	selector: 'heroes',
+	directives: [HeroDetailsComponent],
 	styleUrls: ['app/components/heroes/styles.css'],
 	templateUrl: 'app/components/heroes/template.html'
 })
@@ -33,5 +35,9 @@ export class HeroesComponent implements OnInit {
 
 	goToDetails(): void {
 		this._router.navigate(['HeroDetails', {id: this.selectedHero.id}]);
+	}
+
+	someCustomEvent(hero: Hero) {
+		console.log(hero);
 	}
 }

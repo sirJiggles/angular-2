@@ -23,11 +23,16 @@ System.register(['angular2/core', 'angular2/router', '../../services/heroes/inde
             }],
         execute: function() {
             HeroDetailsComponent = (function () {
+                // could use the custom event on the directive if it was a child like this
+                // <hero-details (customEvent)="someParentFunction($event)"></hero-details>
+                // The hero would be passed in the event to the parent
                 function HeroDetailsComponent(_heroesService, _routeParams) {
                     this._heroesService = _heroesService;
                     this._routeParams = _routeParams;
                     this.powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
                     this.submited = false;
+                    // An emitter for sending things out of the component
+                    this.customEvent = new core_1.EventEmitter();
                 }
                 HeroDetailsComponent.prototype.ngOnInit = function () {
                     var _this = this;
@@ -36,11 +41,18 @@ System.register(['angular2/core', 'angular2/router', '../../services/heroes/inde
                     this._heroesService.getHero(id).then(function (hero) { return _this.hero = hero; });
                 };
                 HeroDetailsComponent.prototype.onSubmit = function () {
+                    // emit the custom hero out (if we where using)
+                    this.customEvent.emit(this.hero);
+                    console.log('sending it out');
                     this.submited = true;
                 };
                 HeroDetailsComponent.prototype.goBack = function () {
                     window.history.back();
                 };
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], HeroDetailsComponent.prototype, "customEvent", void 0);
                 HeroDetailsComponent = __decorate([
                     core_1.Component({
                         selector: 'hero-details',

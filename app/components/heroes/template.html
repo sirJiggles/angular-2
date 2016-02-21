@@ -8,8 +8,10 @@
   </li>
 </ul>
 <div *ngIf="selectedHero">
-  <h2>
+  <!-- <h2>
     {{selectedHero.name | uppercase}} is my hero
   </h2>
-  <button (click)="goToDetails()">View Details</button>
+  <button (click)="goToDetails()">View Details</button> -->
+
+  <hero-details (customEvent)="someCustomEvent($event)" [hero]="selectedHero"></hero-details>
 </div>

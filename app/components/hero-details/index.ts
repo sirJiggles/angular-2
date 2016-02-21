@@ -1,4 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit, Output, EventEmitter} from 'angular2/core';
 import {NgForm} from 'angular2/common';
 import {RouteParams} from 'angular2/router';
 import {HeroesService} from '../../services/heroes/index';
@@ -16,6 +16,12 @@ export class HeroDetailsComponent {
   public powers: string[] = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
   public submited: boolean = false;
 
+  // An emitter for sending things out of the component
+  @Output() customEvent = new EventEmitter<Hero>();
+  // could use the custom event on the directive if it was a child like this
+  // <hero-details (customEvent)="someParentFunction($event)"></hero-details>
+  // The hero would be passed in the event to the parent
+
   constructor(
     private _heroesService: HeroesService,
     private _routeParams: RouteParams) {
@@ -28,6 +34,9 @@ export class HeroDetailsComponent {
   }
 
   onSubmit() {
+    // emit the custom hero out (if we where using)
+    this.customEvent.emit(this.hero);
+    console.log('sending it out');
     this.submited = true;
   }
 

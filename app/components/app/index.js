@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../heroes/index', '../dashboard/index', '../hero-details/index', '../../services/heroes/index'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', '../heroes/index', '../dashboard/index', '../hero-details/index', '../../services/heroes/index', '../../services/logger/index'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', '../heroes/index', '../dash
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, index_1, index_2, index_3, index_4;
+    var core_1, router_1, index_1, index_2, index_3, index_4, index_5;
     var AppComponent;
     return {
         setters:[
@@ -29,6 +29,9 @@ System.register(['angular2/core', 'angular2/router', '../heroes/index', '../dash
             },
             function (index_4_1) {
                 index_4 = index_4_1;
+            },
+            function (index_5_1) {
+                index_5 = index_5_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -43,6 +46,7 @@ System.register(['angular2/core', 'angular2/router', '../heroes/index', '../dash
                         ],
                         providers: [
                             index_4.HeroesService,
+                            index_5.Logger,
                             router_1.ROUTER_PROVIDERS
                         ],
                         styleUrls: ['app/components/app/styles'],
